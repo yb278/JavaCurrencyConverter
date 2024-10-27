@@ -38,15 +38,15 @@ public class Main {
     }
 
     public static void GBPtoOther(double amount) {
-        System.out.println(round(amount) + " is " + round(amount * 1.30) + " USD and is worth " + round(amount * 9.23) + " CNY");
+        System.out.println(round(amount)+" GBP " + "is " + round(amount * 1.30) + " USD and is worth " + round(amount * 9.23) + " CNY");
     }
 
     public static void USDtoOther(double amount) {
-        System.out.println(round(amount) + " is " + round(amount / 1.30) + " GBP and is worth " + round(amount * 7.12) + " CNY");
+        System.out.println(round(amount) +" USD "+ "is " + round(amount / 1.30) + " GBP and is worth " + round(amount * 7.12) + " CNY");
     }
 
     public static void CNYtoOther(double amount) {
-        System.out.println(round(amount) + " is " + round(amount / 9.23) + " GBP and is worth " + round(amount / 7.12) + " USD");
+        System.out.println(round(amount) + " CNY "+ "is " + round(amount / 9.23) + " GBP and is worth " + round(amount / 7.12) + " USD");
     }
 
     public static void end() {
