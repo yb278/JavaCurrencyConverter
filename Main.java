@@ -1,42 +1,60 @@
-//Library to ask for data inputs
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("1 GBP");
         System.out.println("2 USD");
-        System.out.println("3 CN¥");
+        System.out.println("3 CNY");
 
-        //Take an input in
+        // Take an input in
         Scanner sc = new Scanner(System.in);
 
-        //Choose currency
+        // Choose currency
         System.out.println("Press the number corresponding to your first currency");
         int choice = sc.nextInt();
 
-        //Choose amount
+        // Choose amount
         System.out.println("Enter how much you want to convert");
-        double amount =sc.nextInt();
+        double amount = sc.nextDouble(); // Use nextDouble for double input
 
-        switch (choice){//This will call functions to convert GBP USD OR CNY to all the others 
+        // Switch based on choice to call the appropriate function
+        switch (choice) {
             case 1:
                 GBPtoOther(amount);
+                end();
                 break;
             case 2:
-                //function2(amount);
-                    break;
+                USDtoOther(amount);
+                end();
+                break;
             case 3:
-                //function3(amount);
-                    break;
+                CNYtoOther(amount);
+                end();
+                break;
             default:
                 System.out.println("You have not selected the right option");
-
         }
+        sc.close(); // Close scanner after use
     }
 
-    public static void GBPtoOther(double amount){
-        System.out.println(amount);
+    public static void GBPtoOther(double amount) {
+        System.out.println(round(amount) + " is " + round(amount * 1.30) + " USD and is worth " + round(amount * 9.23) + " CNY");
+    }
 
+    public static void USDtoOther(double amount) {
+        System.out.println(round(amount) + " is " + round(amount / 1.30) + " GBP and is worth " + round(amount * 7.12) + " CNY");
+    }
 
+    public static void CNYtoOther(double amount) {
+        System.out.println(round(amount) + " is " + round(amount / 9.23) + " GBP and is worth " + round(amount / 7.12) + " USD");
+    }
+
+    public static void end() {
+        System.out.println("In today's prices");
+    }
+
+    // Method to round a double to two decimal places
+    public static double round(double amount) {
+        return Math.round(amount * 100) / 100.0;
     }
 }
