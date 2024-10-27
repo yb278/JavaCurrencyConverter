@@ -1,7 +1,16 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        try {
+            // Call fetchData() to populate `RestApi.data` before printing it
+            RestApi.fetchData();
+            System.out.println(RestApi.data);
+        } catch (IOException e) {
+            System.out.println("Failed to fetch data from API: " + e.getMessage());
+        }
+        
         System.out.println("1 GBP");
         System.out.println("2 USD");
         System.out.println("3 CNY");
@@ -58,3 +67,4 @@ public class Main {
         return Math.round(amount * 100) / 100.0;
     }
 }
+
