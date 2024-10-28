@@ -6,7 +6,7 @@ public class RestApi {
 
     // New method to fetch data from the API
     public static void fetchData() throws IOException {
-        String CONNECT_API_URL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_OjTNB0W98jyArTgbpGJ03Fvi5EOLMIDzbQ26iSOH";
+        String CONNECT_API_URL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_OjTNB0W98jyArTgbpGJ03Fvi5EOLMIDzbQ26iSOH&currencies=EUR%2CUSD%2CCAD&base_currency=GBP";
         String CONNECT_API_KEY = "cur_live_OjTNB0W98jyArTgbpGJ03Fvi5EOLMIDzbQ26iSOH";
 
         URL url = new URL(CONNECT_API_URL);
